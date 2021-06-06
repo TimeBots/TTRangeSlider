@@ -343,16 +343,14 @@ static const CGFloat kLabelsFontSize = 12.0f;
         NSLog(@"需要修正一下");
         CGRect rightFrame = self.maxLabel.frame;
         CGFloat diffValue = CGRectGetMaxX(self.maxLabel.frame) - CGRectGetMaxX(self.frame);
-        rightFrame.origin.x += diffValue;
+        rightFrame.origin.x = rightFrame.origin.x -diffValue - self.barSidePadding;
         self.maxLabel.frame = rightFrame;
     }
     
     if (CGRectGetMinX(self.minLabel.frame) <= (CGRectGetMinX(self.frame) - self.barSidePadding)) {
         CGRect leftFrame = self.minLabel.frame;
-        CGFloat diffValue = CGRectGetMaxX(self.minLabel.frame) - CGRectGetMinX(self.frame);
-        leftFrame.origin.x = CGRectGetMinX(self.frame) - (self.leftHandle.frame.size.width / 2);
+        leftFrame.origin.x = 0;//CGRectGetMinX(self.frame) - (CGRectGetMinX(self.minLabel.frame) - self.frame.origin.x) + self.barSidePadding;
         self.minLabel.alignmentMode = kCAAlignmentLeft;
-        self.minLabel.backgroundColor = [UIColor yellowColor].CGColor;
         self.minLabel.frame = leftFrame;
     }
 }
