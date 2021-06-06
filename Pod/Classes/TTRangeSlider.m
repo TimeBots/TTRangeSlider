@@ -336,6 +336,25 @@ static const CGFloat kLabelsFontSize = 12.0f;
             self.maxLabel.position = CGPointMake(leftHandleCentre.x + self.minLabel.frame.size.width/2 + minSpacingBetweenLabels + self.maxLabel.frame.size.width/2, self.maxLabel.position.y);
         }
     }
+    
+    NSLog(@"righthandle.frame:%@---maxLabel.frame:%@",NSStringFromCGRect(self.rightHandle.frame),NSStringFromCGRect(self.maxLabel.frame));
+    NSLog(@"slicer.frame:%@",NSStringFromCGRect(self.frame));
+    if (CGRectGetMaxX(self.maxLabel.frame) > CGRectGetWidth(self.frame)) {
+        NSLog(@"需要修正一下");
+        CGRect rightFrame = self.maxLabel.frame;
+        CGFloat diffValue = CGRectGetMaxX(self.maxLabel.frame) - CGRectGetMaxX(self.frame);
+        rightFrame.origin.x += diffValue;
+        self.maxLabel.frame = rightFrame;
+    }
+    
+    if (CGRectGetMinX(self.minLabel.frame) <= (CGRectGetMinX(self.frame) - self.barSidePadding)) {
+        CGRect leftFrame = self.minLabel.frame;
+        CGFloat diffValue = CGRectGetMaxX(self.minLabel.frame) - CGRectGetMinX(self.frame);
+        leftFrame.origin.x = CGRectGetMinX(self.frame) - (self.leftHandle.frame.size.width / 2);
+        self.minLabel.alignmentMode = kCAAlignmentLeft;
+        self.minLabel.backgroundColor = [UIColor yellowColor].CGColor;
+        self.minLabel.frame = leftFrame;
+    }
 }
 
 - (void)updateHandleTypeAndSize {
