@@ -32,7 +32,7 @@
     
     self.rangeSlider.shadowRadius = 2;
     self.rangeSlider.shadowOpacity = 0.75;
-    
+    self.rangeSlider.gradientColors = @[(__bridge id)[UIColor redColor].CGColor,(__bridge id)[UIColor greenColor].CGColor];
     [self.rangeSlider addTarget:self action:@selector(logControlEvent:) forControlEvents:UIControlEventValueChanged];
     
     //currency range slider
@@ -59,6 +59,7 @@
     self.rangeSliderCustom.tintColorBetweenHandles = [UIColor redColor];
     self.rangeSliderCustom.lineBorderWidth = 1;
     self.rangeSliderCustom.lineBorderColor = [UIColor darkGrayColor];
+    self.rangeSliderCustom.gradientColors = @[(__bridge id)[UIColor redColor].CGColor,(__bridge id)[UIColor greenColor].CGColor];
     NSNumberFormatter *customFormatter = [[NSNumberFormatter alloc] init];
     customFormatter.positiveSuffix = @"B";
     self.rangeSliderCustom.numberFormatterOverride = customFormatter;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zoN-NS-23h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zoN-NS-23h">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,19 +20,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DwD-4K-U87" customClass="TTRangeSlider">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwD-4K-U87" customClass="TTRangeSlider">
                                 <rect key="frame" x="20" y="140" width="560" height="65"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
-                                <color key="tintColor" red="0.95926036010000004" green="0.14687572130000001" blue="0.021226121880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Cdi-WJ-VRf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                        <color key="value" systemColor="systemGreenColor"/>
+                                        <color key="value" systemColor="systemRedColor"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColorBetweenHandles">
-                                        <color key="value" systemColor="systemYellowColor"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -42,7 +41,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Range:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv3-Bw-dbz">
-                                <rect key="frame" x="20" y="94" width="127" height="21"/>
+                                <rect key="frame" x="20" y="94" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -53,13 +52,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Currency Range:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auG-6C-UUJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Range:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auG-6C-UUJ">
                                 <rect key="frame" x="20" y="230" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTp-xv-6Dx" customClass="TTRangeSlider">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTp-xv-6Dx" customClass="TTRangeSlider">
                                 <rect key="frame" x="20" y="276" width="560" height="65"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
@@ -73,44 +72,13 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Custom Range and Image Handle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF3-K2-d12">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Range and Image Handle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF3-K2-d12">
                                 <rect key="frame" x="20" y="366" width="258.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-aN-v9q" customClass="TTRangeSlider">
-                                <rect key="frame" x="20" y="412" width="560" height="65"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.94117647059999998" green="0.3411764706" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="3pr-97-QUE"/>
-                                    <constraint firstAttribute="height" constant="60" id="GFz-Lm-buz"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="ygD-0b-zU7"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineBorderColor">
-                                        <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineBorderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColorBetweenHandles">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3pr-97-QUE"/>
-                                        <exclude reference="GFz-Lm-buz"/>
-                                        <exclude reference="ygD-0b-zU7"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Currency Range with Step:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8O-3X-6fq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Range with Step:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8O-3X-6fq">
                                 <rect key="frame" x="20" y="502" width="203" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -158,37 +126,43 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVE-c7-h8z" customClass="TTRangeSlider">
-                                <rect key="frame" x="20" y="655" width="560" height="65"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-aN-v9q" customClass="TTRangeSlider">
+                                <rect key="frame" x="32" y="418" width="560" height="65"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="59D-FQ-d3c"/>
-                                    <constraint firstAttribute="height" constant="65" id="wvi-lR-O7U"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="zXR-TK-9B1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="3pr-97-QUE"/>
+                                    <constraint firstAttribute="height" constant="60" id="GFz-Lm-buz"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="ygD-0b-zU7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                        <real key="value" value="0.0"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineBorderColor">
+                                        <color key="value" systemColor="systemPinkColor"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <real key="value" value="100"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineBorderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedMinimum">
-                                        <real key="value" value="0.0"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedMaximum">
-                                        <real key="value" value="100"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="minHandleColor">
+                                        <color key="value" red="0.98823529409999999" green="0.93725490199999995" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="step">
-                                        <real key="value" value="500"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="maxHandleColor">
+                                        <color key="value" red="0.98431372549999996" green="0.53333333329999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="maxLabelColour">
+                                        <color key="value" red="0.0" green="0.80000000000000004" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="59D-FQ-d3c"/>
-                                        <exclude reference="zXR-TK-9B1"/>
+                                        <exclude reference="3pr-97-QUE"/>
+                                        <exclude reference="GFz-Lm-buz"/>
+                                        <exclude reference="ygD-0b-zU7"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -197,6 +171,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RTp-xv-6Dx" secondAttribute="trailing" id="0mN-Qi-A7A"/>
                             <constraint firstItem="DwD-4K-U87" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="39D-6N-RK3"/>
+                            <constraint firstItem="WF3-K2-d12" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="366" id="6Cd-Zy-U3F"/>
                             <constraint firstItem="uv3-Bw-dbz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="7Ab-px-Ai2"/>
                             <constraint firstItem="l4E-DD-9aC" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="9IQ-AF-edf"/>
                             <constraint firstItem="DwD-4K-U87" firstAttribute="top" secondItem="uv3-Bw-dbz" secondAttribute="bottom" constant="25" id="CT6-wz-VZc"/>
@@ -204,9 +179,7 @@
                             <constraint firstItem="auG-6C-UUJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="FtY-yK-Wsq"/>
                             <constraint firstItem="4yD-aN-v9q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="HaE-kV-J8i"/>
                             <constraint firstItem="1k3-K5-JnB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="MQA-1i-yKa"/>
-                            <constraint firstItem="AVE-c7-h8z" firstAttribute="top" secondItem="1k3-K5-JnB" secondAttribute="bottom" constant="13" id="OGM-nv-IuO"/>
                             <constraint firstItem="x8O-3X-6fq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="P0S-Pd-Wgn"/>
-                            <constraint firstItem="AVE-c7-h8z" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Rrt-bv-huL"/>
                             <constraint firstItem="RTp-xv-6Dx" firstAttribute="top" secondItem="auG-6C-UUJ" secondAttribute="bottom" constant="25" id="T2o-O2-VyS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="l4E-DD-9aC" secondAttribute="bottom" constant="20" id="T6D-l2-N9s"/>
                             <constraint firstItem="1k3-K5-JnB" firstAttribute="top" secondItem="o9Y-9Z-GaJ" secondAttribute="bottom" constant="8" id="UUN-o8-8cX"/>
@@ -215,10 +188,12 @@
                             <constraint firstItem="DwD-4K-U87" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Yqm-gV-gyy"/>
                             <constraint firstItem="auG-6C-UUJ" firstAttribute="top" secondItem="DwD-4K-U87" secondAttribute="bottom" constant="25" id="caL-iA-Pnx"/>
                             <constraint firstItem="x8O-3X-6fq" firstAttribute="top" secondItem="4yD-aN-v9q" secondAttribute="bottom" constant="25" id="cjA-eS-RyF"/>
+                            <constraint firstItem="auG-6C-UUJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="230" id="dGf-mC-5UD"/>
                             <constraint firstItem="RTp-xv-6Dx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fLy-Gk-xeG"/>
                             <constraint firstItem="o9Y-9Z-GaJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="gQR-BV-Qqs"/>
-                            <constraint firstItem="AVE-c7-h8z" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="i9k-4g-XFT"/>
                             <constraint firstItem="o9Y-9Z-GaJ" firstAttribute="top" secondItem="x8O-3X-6fq" secondAttribute="bottom" constant="25" id="iY3-oP-mel"/>
+                            <constraint firstItem="o9Y-9Z-GaJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="548" id="jRX-qF-G5J"/>
+                            <constraint firstItem="auG-6C-UUJ" firstAttribute="centerX" secondItem="uv3-Bw-dbz" secondAttribute="centerX" id="lN1-OK-gX5"/>
                             <constraint firstItem="o9Y-9Z-GaJ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="nL0-3y-8H9"/>
                             <constraint firstItem="4yD-aN-v9q" firstAttribute="top" secondItem="WF3-K2-d12" secondAttribute="bottom" constant="25" id="ppA-xW-hcL"/>
                             <constraint firstItem="WF3-K2-d12" firstAttribute="top" secondItem="RTp-xv-6Dx" secondAttribute="bottom" constant="25" id="qFC-4i-tun"/>
@@ -257,11 +232,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

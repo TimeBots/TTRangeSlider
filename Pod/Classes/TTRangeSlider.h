@@ -204,6 +204,8 @@ typedef NS_ENUM(NSInteger, LabelPosition) {
  */
 @property (nonatomic, assign) IBInspectable float shadowOpacity;
 
+@property (nonatomic, strong) NSArray *gradientColors;
+
 /**
  *Define the two possibilities of HandleType (round or rectangle)
  */

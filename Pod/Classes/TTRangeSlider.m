@@ -161,7 +161,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-
+    
     //positioning for the slider line
     float barSidePadding = self.barSidePadding;
     CGRect currentFrame = self.frame;
@@ -170,12 +170,14 @@ static const CGFloat kLabelsFontSize = 12.0f;
     CGPoint lineRightSide = CGPointMake(currentFrame.size.width-barSidePadding, yMiddle);
     self.sliderLine.frame = CGRectMake(lineLeftSide.x, lineLeftSide.y, lineRightSide.x-lineLeftSide.x, self.lineHeight);
     
-    self.sliderLine.cornerRadius = self.lineHeight / 2.0;
-    self.sliderLineBetweenHandles.cornerRadius = self.lineHeight / 2.0;
-    
     [self updateLabelValues];
     [self updateHandlePositions];
     [self updateLabelPositions];
+    [self updateGradientStyle];
+
+    self.sliderLine.cornerRadius = self.lineHeight / 2.0;
+    self.sliderLineBetweenHandles.cornerRadius = self.lineHeight / 2.0;
+    self.sliderLine.masksToBounds = YES;
 }
 
 - (id)initWithCoder:(NSCoder *)aCoder
@@ -362,6 +364,20 @@ static const CGFloat kLabelsFontSize = 12.0f;
     CGRect handleRect = self.handleType == HandleTypeRound ? CGRectMake(0, 0, self.handleDiameter, self.handleDiameter) : CGRectMake(0, 0, self.handleSize.width, self.handleSize.height);
     self.leftHandle.frame = handleRect;
     self.rightHandle.frame = handleRect;
+}
+
+- (void)updateGradientStyle{
+    if (self.gradientColors) {
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.startPoint = CGPointMake(0, 0.5);
+        gradientLayer.endPoint = CGPointMake(1, 0.5);
+        gradientLayer.colors = self.gradientColors;
+        gradientLayer.frame = self.sliderLine.bounds;
+        [self.sliderLine insertSublayer:gradientLayer atIndex:0];
+        
+        self.tintColor = [UIColor clearColor];
+        self.tintColorBetweenHandles = [UIColor clearColor];
+    }
 }
 
 #pragma mark - Touch Tracking
