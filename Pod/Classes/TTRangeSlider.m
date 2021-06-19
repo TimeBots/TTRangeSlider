@@ -90,6 +90,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
     //draw the track distline
     self.sliderLineBetweenHandles = [CALayer layer];
     self.sliderLineBetweenHandles.backgroundColor = self.tintColor.CGColor;
+    self.sliderLineBetweenHandles.masksToBounds = YES;
     [self.layer addSublayer:self.sliderLineBetweenHandles];
 
     //draw the minimum slider handle
@@ -169,7 +170,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
     CGPoint lineLeftSide = CGPointMake(barSidePadding, yMiddle);
     CGPoint lineRightSide = CGPointMake(currentFrame.size.width-barSidePadding, yMiddle);
     self.sliderLine.frame = CGRectMake(lineLeftSide.x, lineLeftSide.y, lineRightSide.x-lineLeftSide.x, self.lineHeight);
-    
+
     [self updateLabelValues];
     [self updateHandlePositions];
     [self updateLabelPositions];
@@ -339,10 +340,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
         }
     }
     
-    NSLog(@"righthandle.frame:%@---maxLabel.frame:%@",NSStringFromCGRect(self.rightHandle.frame),NSStringFromCGRect(self.maxLabel.frame));
-    NSLog(@"slicer.frame:%@",NSStringFromCGRect(self.frame));
     if (CGRectGetMaxX(self.maxLabel.frame) > CGRectGetWidth(self.frame)) {
-        NSLog(@"需要修正一下");
         CGRect rightFrame = self.maxLabel.frame;
         CGFloat diffValue = CGRectGetMaxX(self.maxLabel.frame) - CGRectGetMaxX(self.frame);
         rightFrame.origin.x = rightFrame.origin.x -diffValue - self.barSidePadding;
@@ -373,10 +371,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
         gradientLayer.endPoint = CGPointMake(1, 0.5);
         gradientLayer.colors = self.gradientColors;
         gradientLayer.frame = self.sliderLine.bounds;
-        [self.sliderLine insertSublayer:gradientLayer atIndex:0];
-        
-        self.tintColor = [UIColor clearColor];
-        self.tintColorBetweenHandles = [UIColor clearColor];
+        [self.sliderLineBetweenHandles insertSublayer:gradientLayer atIndex:0];
     }
 }
 
